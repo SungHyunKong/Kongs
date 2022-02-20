@@ -11,6 +11,7 @@
         <typeAlias type="com.ts.model.WorkerTimeVO" alias="WorkerTimeVo"/>
         <typeAlias type="com.ts.model.BoardMemberDTO" alias="BoardMemberDTO"/>
         <typeAlias type="com.ts.model.QaBoardDTO" alias="QaBoardDTO"/>
+        <typeAlias type="com.ts.model.PayVO" alias="PayVO"/>
     </typeAliases>
   <environments default="development">
     <environment id="development">

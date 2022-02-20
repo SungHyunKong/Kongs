@@ -16,6 +16,7 @@ public class HandlerMapping {
 		mappings.put("/workerDelete.do", new WorkerDeleteController());
 		mappings.put("/workerInsert.do", new WorkerInsertController());
 		mappings.put("/workerUpdate.do", new WorkerUpdateController());
+		mappings.put("/pay.do", new PayListController());
 	}
 	
 	public Controller getController(String command) {

@@ -7,12 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-	if(${name} == null){
+	if(${name == null}){
 		alert("로그인 후 이용하세요.");
 		location.href="test.jsp";
-	}else{
-		
 	}
+		
+	
+		
 
 </script>
 
@@ -35,22 +36,26 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
+                          <th scope="col">결제번호</th>
                           <th scope="col">결제제목</th>
                           <th scope="col">작성자</th>
-                          <th scope="col">작성시간</th>
+                          <th scope="col">작성날짜</th>
                         </tr>
                       </thead>
                    <tbody>
 
 								<c:forEach var="vo" items="${list}">
 									<tr>
-										<td>${vo.worker_code}</td>
-
+										<td>${vo.pay_code}</td>
+										<td>${vo.pay_title}</td>
+										<td>${vo.pay_writer}</td>
+										<td>${vo.str}</td>
 									</tr>
 								</c:forEach>
-
+					
 							</tbody>
                     </table>
+					<button type = "button" onclick="location.href='payInsert.jsp'">등록</button>
                   </div>
                 </div>
 					</div>

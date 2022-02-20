@@ -48,7 +48,7 @@
 								class="far fa-square"></i> <span>근태관리</span></a></li>
 					</ul>
 					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/pay.jsp"><i
+						<li class=active><a class="nav-link" href="${ctp}/pay.do"><i
 								class="far fa-square"></i> <span>전자결제</span></a></li>
 					</ul>
 					<ul class="sidebar-menu">

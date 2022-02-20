@@ -11,7 +11,7 @@ CREATE TABLE `member` (
 COMMENT '회원';
 
 select * from member where member_id='sjs' and member_pw='admin1234';
-
+select * from pay;
 -- 회원
 ALTER TABLE `member`
 	ADD CONSTRAINT `PK_member` -- 회원 기본키
@@ -21,14 +21,13 @@ ALTER TABLE `member`
 		
 		
 		show tables;
-desc worker;
+desc pay;
+delete from pay;
 		
-select * from worker;
+select * from pay;
 select * from member where member_id='sjs' AND member_pw = 'admin1234';
-delete from worker;
-   insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn) 
-    values("sjs","한광진","1998-11-07","남","부장","인사과","y");
-
+   insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn)  values("sjs","한광진","1998-11-07","남","부장","인사과","y");
+   insert into pay(pay_writer,pay_title,pay_content,pay_date,pay_admindate,pay_view) values("sjs","결제제목입니다.","결제내용입니다.",'2022-02-20 10:56:34','2022-02-21 10:56:34',3);
 
 insert into member values("sjs","admin1234","심준수","남","1998-09-18","sjs@naver.com");
 insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn) values("hkj","한광진","1998-11-07","남","부장","인사과","y");
@@ -43,11 +42,11 @@ show tables;
 
 desc worker;
 
-delete from worketime;
+delete from member;
 
 alter table worker modify worker_code INT not null auto_increment;
 alter table worker auto_increment=1;
-
+show tables
 -- 사원관리
 -- 회원가입
 DROP TABLE IF EXISTS `worker` RESTRICT;
@@ -206,13 +205,13 @@ CREATE TABLE `meetingroom` (
 -- 전자결제
 CREATE TABLE `pay` (
 	`pay_code`       INT auto_increment primary key, -- 결제코드
-	`pay_writer`     varchar(20)        NOT NULL, -- 작성자
+	`pay_writer`     VARCHAR(20)        NOT NULL, -- 작성자
 	`pay_title`      VARCHAR(20)        NULL,     -- 결제제목
 	`pay_content`    text               NULL,     -- 결제내용
 	`pay_file`       VARCHAR(50)        NULL,     -- 첨부파일
 	`pay_admin`      VARCHAR(20)        NULL,     -- 결재자
-	`pay_date`       date               NULL,     -- 작성일
-	`pay_admindate`  date               NULL,     -- 확인날짜
+	`pay_date`       datetime               NULL,     -- 작성일
+	`pay_admindate`  datetime               NULL,     -- 확인날짜
 	`pay_view`       INT                NULL,     -- 조회수
 	`pay_yn`         ENUM('y','n')      NULL      -- 승인여부
 );

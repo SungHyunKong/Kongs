@@ -11,6 +11,7 @@
 	BoardMemberDTO dto2 = dao.login(dto);
 	
 	if(dto2 != null){
+		session.setAttribute("id", dto2.getMember_id());
 		session.setAttribute("name", dto2.getMember_name());
 %>
 <script>
