@@ -30,5 +30,11 @@ public class PayDAO {
 
 		return list;
 	}
+	public PayVO payContent(int pay_code) {
+		SqlSession session = sqlSessionFactory.openSession();
+		PayVO vo = session.selectOne("payContent",pay_code);
+		session.close();
+		return vo;
+	}
 
 }

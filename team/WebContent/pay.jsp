@@ -11,7 +11,6 @@
 		alert("로그인 후 이용하세요.");
 		location.href="test.jsp";
 	}
-		
 	
 		
 
@@ -39,6 +38,7 @@
                           <th scope="col">결제번호</th>
                           <th scope="col">결제제목</th>
                           <th scope="col">작성자</th>
+                          <th scope="col">조회수</th>
                           <th scope="col">작성날짜</th>
                         </tr>
                       </thead>
@@ -46,9 +46,14 @@
 
 								<c:forEach var="vo" items="${list}">
 									<tr>
-										<td>${vo.pay_code}</td>
-										<td>${vo.pay_title}</td>
+										<td> ${vo.pay_code}</td>
+										<td>
+										<a href="payContent.do?pay_code=${vo.pay_code}" onclick="window.open(this.href,'팝업','width=800,height=800'); return false;">
+										${vo.pay_title}
+										</a>
+										</td>
 										<td>${vo.pay_writer}</td>
+										<td>${vo.pay_view}</td>
 										<td>${vo.str}</td>
 									</tr>
 								</c:forEach>

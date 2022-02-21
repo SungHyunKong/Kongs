@@ -10,6 +10,11 @@ CREATE TABLE `member` (
 )
 COMMENT '회원';
 
+desc member;
+desc worker;
+
+select * from worker;
+
 select * from member where member_id='sjs' and member_pw='admin1234';
 select * from pay;
 -- 회원
@@ -22,15 +27,16 @@ ALTER TABLE `member`
 		
 		show tables;
 desc pay;
-delete from pay;
+select * from worker;
 		
 select * from pay;
 select * from member where member_id='sjs' AND member_pw = 'admin1234';
-   insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn)  values("sjs","한광진","1998-11-07","남","부장","인사과","y");
-   insert into pay(pay_writer,pay_title,pay_content,pay_date,pay_admindate,pay_view) values("sjs","결제제목입니다.","결제내용입니다.",'2022-02-20 10:56:34','2022-02-21 10:56:34',3);
+insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn)  values("sjs","한광진","1998-11-07","남","부장","인사과","y");
+insert into pay(pay_writer,pay_title,pay_content,pay_date,pay_admindate,pay_view) values("sjs","결제제목입니다2.","결제내용입니다.2",'2022-02-20 10:56:34','2022-02-21 10:56:34',3);
 
 insert into member values("sjs","admin1234","심준수","남","1998-09-18","sjs@naver.com");
-insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn) values("hkj","한광진","1998-11-07","남","부장","인사과","y");
+insert into member values("kkk","admin1234","공성현","남","1998-09-18","sjs@naver.com");
+insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn) values("kkk","한광진","1998-11-07","남","부장","인사과","y");
 
 
 insert into worker values("sjs","한광진","1998-11-07","남","부장","인사과","y");

@@ -33,6 +33,11 @@
 <select id="payList" resultType="PayVO">
     select * from pay
 </select>
+
+<select id="payContent" resultType="PayVO" parameterType="Integer">
+    select * from pay where pay_code=#{pay_code}
+    
+</select>
 <!-- <delete id="memberDelete" parameterType="Integer"> -->
 <!--     delete from member where num=#{num} -->
 <!-- </delete> -->
